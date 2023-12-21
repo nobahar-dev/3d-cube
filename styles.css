@@ -1,0 +1,150 @@
+/*start of common styles*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E1E1E;
+}
+/*end of common styles*/
+
+/*start of 3D cube styles*/
+.cube-wrapper {
+    perspective: 100rem;
+}
+
+.cube {
+    width: 30rem;
+    height: 55rem;
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(20deg) rotateZ(0);
+    position: relative;
+    top: -2rem;
+    transition: transform .5s
+}
+
+.front-side, .back-side {
+    width: 100%;
+    height: 100%;
+    background-color: #FEE;
+    position: absolute;
+    transform-style: preserve-3d;
+    box-shadow: inset .1rem .1rem .1rem #DDD,
+    inset -.1rem -.1rem .1rem #DDD;
+}
+
+.front-side {
+    padding: 2.5rem;
+    transform: translateZ(5rem);
+}
+
+.front-side::before, .front-side::after {
+    content: "";
+    width: 100%;
+    height: 10rem;
+    background-color: #FEE;
+    position: absolute;
+    box-shadow: inset .1rem .1rem .1rem #DDD,
+    inset -.1rem -.1rem .1rem #DDD;
+}
+
+.front-side::before {
+    top: 0;
+    left: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+
+.front-side::after {
+    bottom: 0;
+    left: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+
+.front-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.back-side {
+    transform: translateZ(-5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-side i {
+    font-size: 18rem;
+    color: #6EDAE6FF;
+    text-shadow: .1rem .1rem .2rem #AAA,
+    -.1rem -.1rem .2rem #AAA;
+    transform: rotateY(180deg);
+}
+
+.back-side:before, .back-side:after {
+    content: "iPhone";
+    width: 10rem;
+    height: 100%;
+    background-color: #FEE;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #EC1919;
+    box-shadow: inset .1rem .1rem .1rem #DDD,
+    inset -.1rem -.1rem .1rem #DDD;
+}
+
+.back-side:before {
+    top: 0;
+    left: 0;
+    transform: rotateY(-90deg);
+    transform-origin: left;
+}
+
+.back-side:after {
+    top: 0;
+    right: 0;
+    transform: rotateY(90deg);
+    transform-origin: right;
+}
+/*end of 3D cube styles*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
